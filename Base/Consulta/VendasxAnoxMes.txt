@@ -1,0 +1,11 @@
+select * from (
+SELECT 
+EXTRACT(Month FROM  data_venda) Mes,
+EXTRACT(year FROM  data_venda)  Ano,
+SUM(Qtd_Venda) Vendas 
+ FROM `primal-outrider-304522.Boticario.tbVendas`
+group by 
+EXTRACT(Month FROM  data_venda),
+EXTRACT(year FROM  data_venda)
+) as tab1
+order by tab1.Ano,tab1.Mes

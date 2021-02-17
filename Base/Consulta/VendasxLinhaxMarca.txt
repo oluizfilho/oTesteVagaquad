@@ -1,0 +1,11 @@
+select * from (
+SELECT 
+Marca Marca,
+Linha Linha,
+SUM(Qtd_Venda) Vendas 
+ FROM `primal-outrider-304522.Boticario.tbVendas`
+group by 
+Marca,
+Linha
+) as tab1
+order by tab1.Marca,tab1.Linha
